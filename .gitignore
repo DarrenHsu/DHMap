@@ -1,0 +1,6 @@
+# Ignore Xcode Local File
+.DS_Store
+*.xcworkspace
+xcuserdata
+xcshareddata
+Pods
