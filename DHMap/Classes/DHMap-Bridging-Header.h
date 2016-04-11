@@ -7,3 +7,4 @@
 //
 
 #import "CoreData+MagicalRecord.h"
+#import "SlideNavigationController.h"

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		893FC05D345F503F942685D3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 89820C21E20303E2CDDE48EB /* libPods.a */; };
 		8C0D37A71CB7562A002F669B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0D37A61CB7562A002F669B /* AppDelegate.swift */; };
-		8C0D37A91CB7562A002F669B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0D37A81CB7562A002F669B /* ViewController.swift */; };
 		8C0D37AC1CB7562A002F669B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C0D37AA1CB7562A002F669B /* Main.storyboard */; };
 		8C0D37AF1CB7562A002F669B /* DHMap.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8C0D37AD1CB7562A002F669B /* DHMap.xcdatamodeld */; };
 		8C0D37B11CB7562A002F669B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C0D37B01CB7562A002F669B /* Assets.xcassets */; };
@@ -41,6 +40,15 @@
 		8C0D38151CB758F6002F669B /* MagicalRecord+Setup.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0D37F41CB758F6002F669B /* MagicalRecord+Setup.m */; };
 		8C0D38161CB758F6002F669B /* MagicalRecord+ShorthandSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0D37F61CB758F6002F669B /* MagicalRecord+ShorthandSupport.m */; };
 		8C0D38171CB758F6002F669B /* MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0D37F81CB758F6002F669B /* MagicalRecord.m */; };
+		8C707E521CB7A78B00721BC7 /* SlideNavigationContorllerAnimatorFade.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C707E471CB7A78B00721BC7 /* SlideNavigationContorllerAnimatorFade.m */; };
+		8C707E531CB7A78B00721BC7 /* SlideNavigationContorllerAnimatorScale.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C707E491CB7A78B00721BC7 /* SlideNavigationContorllerAnimatorScale.m */; };
+		8C707E541CB7A78B00721BC7 /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C707E4B1CB7A78B00721BC7 /* SlideNavigationContorllerAnimatorScaleAndFade.m */; };
+		8C707E551CB7A78B00721BC7 /* SlideNavigationContorllerAnimatorSlide.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C707E4D1CB7A78B00721BC7 /* SlideNavigationContorllerAnimatorSlide.m */; };
+		8C707E561CB7A78B00721BC7 /* SlideNavigationContorllerAnimatorSlideAndFade.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C707E4F1CB7A78B00721BC7 /* SlideNavigationContorllerAnimatorSlideAndFade.m */; };
+		8C707E571CB7A78B00721BC7 /* SlideNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C707E511CB7A78B00721BC7 /* SlideNavigationController.m */; };
+		8C707E5A1CB7A8A400721BC7 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C707E591CB7A8A400721BC7 /* MenuViewController.swift */; };
+		8C707E5C1CB7A8B000721BC7 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C707E5B1CB7A8B000721BC7 /* MapViewController.swift */; };
+		8C707E5E1CB7AABA00721BC7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C707E5D1CB7AABA00721BC7 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +57,6 @@
 		89820C21E20303E2CDDE48EB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C0D37A31CB7562A002F669B /* DHMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DHMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C0D37A61CB7562A002F669B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8C0D37A81CB7562A002F669B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8C0D37AB1CB7562A002F669B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8C0D37AE1CB7562A002F669B /* DHMap.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DHMap.xcdatamodel; sourceTree = "<group>"; };
 		8C0D37B01CB7562A002F669B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -114,6 +121,22 @@
 		8C0D37FB1CB758F6002F669B /* MagicalRecordShorthand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalRecordShorthand.h; sourceTree = "<group>"; };
 		8C0D37FC1CB758F6002F669B /* CoreData+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoreData+MagicalRecord.h"; sourceTree = "<group>"; };
 		8C0D381B1CB75A6F002F669B /* DHMap-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DHMap-Bridging-Header.h"; sourceTree = "<group>"; };
+		8C707E451CB7A78B00721BC7 /* SlideNavigationContorllerAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideNavigationContorllerAnimator.h; sourceTree = "<group>"; };
+		8C707E461CB7A78B00721BC7 /* SlideNavigationContorllerAnimatorFade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideNavigationContorllerAnimatorFade.h; sourceTree = "<group>"; };
+		8C707E471CB7A78B00721BC7 /* SlideNavigationContorllerAnimatorFade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideNavigationContorllerAnimatorFade.m; sourceTree = "<group>"; };
+		8C707E481CB7A78B00721BC7 /* SlideNavigationContorllerAnimatorScale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideNavigationContorllerAnimatorScale.h; sourceTree = "<group>"; };
+		8C707E491CB7A78B00721BC7 /* SlideNavigationContorllerAnimatorScale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideNavigationContorllerAnimatorScale.m; sourceTree = "<group>"; };
+		8C707E4A1CB7A78B00721BC7 /* SlideNavigationContorllerAnimatorScaleAndFade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideNavigationContorllerAnimatorScaleAndFade.h; sourceTree = "<group>"; };
+		8C707E4B1CB7A78B00721BC7 /* SlideNavigationContorllerAnimatorScaleAndFade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideNavigationContorllerAnimatorScaleAndFade.m; sourceTree = "<group>"; };
+		8C707E4C1CB7A78B00721BC7 /* SlideNavigationContorllerAnimatorSlide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideNavigationContorllerAnimatorSlide.h; sourceTree = "<group>"; };
+		8C707E4D1CB7A78B00721BC7 /* SlideNavigationContorllerAnimatorSlide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideNavigationContorllerAnimatorSlide.m; sourceTree = "<group>"; };
+		8C707E4E1CB7A78B00721BC7 /* SlideNavigationContorllerAnimatorSlideAndFade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideNavigationContorllerAnimatorSlideAndFade.h; sourceTree = "<group>"; };
+		8C707E4F1CB7A78B00721BC7 /* SlideNavigationContorllerAnimatorSlideAndFade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideNavigationContorllerAnimatorSlideAndFade.m; sourceTree = "<group>"; };
+		8C707E501CB7A78B00721BC7 /* SlideNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideNavigationController.h; sourceTree = "<group>"; };
+		8C707E511CB7A78B00721BC7 /* SlideNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideNavigationController.m; sourceTree = "<group>"; };
+		8C707E591CB7A8A400721BC7 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		8C707E5B1CB7A8B000721BC7 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		8C707E5D1CB7AABA00721BC7 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,7 +184,6 @@
 				8C0D37BB1CB758CA002F669B /* Classes */,
 				8C0D37BC1CB758CA002F669B /* Library */,
 				8C0D37A61CB7562A002F669B /* AppDelegate.swift */,
-				8C0D37A81CB7562A002F669B /* ViewController.swift */,
 				8C0D37AA1CB7562A002F669B /* Main.storyboard */,
 				8C0D37B01CB7562A002F669B /* Assets.xcassets */,
 				8C0D37B21CB7562A002F669B /* LaunchScreen.storyboard */,
@@ -174,6 +196,7 @@
 		8C0D37BB1CB758CA002F669B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8C707E581CB7A87F00721BC7 /* ViewController */,
 				8C0D381B1CB75A6F002F669B /* DHMap-Bridging-Header.h */,
 			);
 			path = Classes;
@@ -182,6 +205,7 @@
 		8C0D37BC1CB758CA002F669B /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				8C707E431CB7A78B00721BC7 /* SlideController */,
 				8C0D37BD1CB758F6002F669B /* MagicalRecord */,
 			);
 			path = Library;
@@ -290,6 +314,44 @@
 				8C0D37FB1CB758F6002F669B /* MagicalRecordShorthand.h */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		8C707E431CB7A78B00721BC7 /* SlideController */ = {
+			isa = PBXGroup;
+			children = (
+				8C707E441CB7A78B00721BC7 /* Animations */,
+				8C707E501CB7A78B00721BC7 /* SlideNavigationController.h */,
+				8C707E511CB7A78B00721BC7 /* SlideNavigationController.m */,
+			);
+			path = SlideController;
+			sourceTree = "<group>";
+		};
+		8C707E441CB7A78B00721BC7 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				8C707E451CB7A78B00721BC7 /* SlideNavigationContorllerAnimator.h */,
+				8C707E461CB7A78B00721BC7 /* SlideNavigationContorllerAnimatorFade.h */,
+				8C707E471CB7A78B00721BC7 /* SlideNavigationContorllerAnimatorFade.m */,
+				8C707E481CB7A78B00721BC7 /* SlideNavigationContorllerAnimatorScale.h */,
+				8C707E491CB7A78B00721BC7 /* SlideNavigationContorllerAnimatorScale.m */,
+				8C707E4A1CB7A78B00721BC7 /* SlideNavigationContorllerAnimatorScaleAndFade.h */,
+				8C707E4B1CB7A78B00721BC7 /* SlideNavigationContorllerAnimatorScaleAndFade.m */,
+				8C707E4C1CB7A78B00721BC7 /* SlideNavigationContorllerAnimatorSlide.h */,
+				8C707E4D1CB7A78B00721BC7 /* SlideNavigationContorllerAnimatorSlide.m */,
+				8C707E4E1CB7A78B00721BC7 /* SlideNavigationContorllerAnimatorSlideAndFade.h */,
+				8C707E4F1CB7A78B00721BC7 /* SlideNavigationContorllerAnimatorSlideAndFade.m */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		8C707E581CB7A87F00721BC7 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8C707E591CB7A8A400721BC7 /* MenuViewController.swift */,
+				8C707E5D1CB7AABA00721BC7 /* BaseViewController.swift */,
+				8C707E5B1CB7A8B000721BC7 /* MapViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		908DFAD7A87C0EAE2C85D9B6 /* Frameworks */ = {
@@ -422,17 +484,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C707E521CB7A78B00721BC7 /* SlideNavigationContorllerAnimatorFade.m in Sources */,
 				8C0D37AF1CB7562A002F669B /* DHMap.xcdatamodeld in Sources */,
 				8C0D38171CB758F6002F669B /* MagicalRecord.m in Sources */,
 				8C0D38081CB758F6002F669B /* NSManagedObject+MagicalRequests.m in Sources */,
 				8C0D37FD1CB758F6002F669B /* MagicalImportFunctions.m in Sources */,
 				8C0D37FE1CB758F6002F669B /* NSAttributeDescription+MagicalDataImport.m in Sources */,
-				8C0D37A91CB7562A002F669B /* ViewController.swift in Sources */,
+				8C707E5C1CB7A8B000721BC7 /* MapViewController.swift in Sources */,
 				8C0D380D1CB758F6002F669B /* NSManagedObjectContext+MagicalThreading.m in Sources */,
 				8C0D380A1CB758F6002F669B /* NSManagedObjectContext+MagicalObserving.m in Sources */,
 				8C0D38061CB758F6002F669B /* NSManagedObject+MagicalFinders.m in Sources */,
 				8C0D38071CB758F6002F669B /* NSManagedObject+MagicalRecord.m in Sources */,
+				8C707E531CB7A78B00721BC7 /* SlideNavigationContorllerAnimatorScale.m in Sources */,
 				8C0D38101CB758F6002F669B /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
+				8C707E561CB7A78B00721BC7 /* SlideNavigationContorllerAnimatorSlideAndFade.m in Sources */,
 				8C0D380E1CB758F6002F669B /* NSManagedObjectModel+MagicalRecord.m in Sources */,
 				8C0D37FF1CB758F6002F669B /* NSEntityDescription+MagicalDataImport.m in Sources */,
 				8C0D380F1CB758F6002F669B /* NSPersistentStore+MagicalRecord.m in Sources */,
@@ -442,13 +507,18 @@
 				8C0D38091CB758F6002F669B /* NSManagedObjectContext+MagicalChainSave.m in Sources */,
 				8C0D38011CB758F6002F669B /* NSObject+MagicalDataImport.m in Sources */,
 				8C0D38021CB758F6002F669B /* NSRelationshipDescription+MagicalDataImport.m in Sources */,
+				8C707E5E1CB7AABA00721BC7 /* BaseViewController.swift in Sources */,
 				8C0D380C1CB758F6002F669B /* NSManagedObjectContext+MagicalSaves.m in Sources */,
 				8C0D38041CB758F6002F669B /* NSManagedObject+MagicalAggregation.m in Sources */,
 				8C0D38141CB758F6002F669B /* MagicalRecord+Options.m in Sources */,
+				8C707E5A1CB7A8A400721BC7 /* MenuViewController.swift in Sources */,
+				8C707E541CB7A78B00721BC7 /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */,
+				8C707E571CB7A78B00721BC7 /* SlideNavigationController.m in Sources */,
 				8C0D38151CB758F6002F669B /* MagicalRecord+Setup.m in Sources */,
 				8C0D38121CB758F6002F669B /* MagicalRecord+ErrorHandling.m in Sources */,
 				8C0D38111CB758F6002F669B /* MagicalRecord+Actions.m in Sources */,
 				8C0D38051CB758F6002F669B /* NSManagedObject+MagicalDataImport.m in Sources */,
+				8C707E551CB7A78B00721BC7 /* SlideNavigationContorllerAnimatorSlide.m in Sources */,
 				8C0D380B1CB758F6002F669B /* NSManagedObjectContext+MagicalRecord.m in Sources */,
 				8C0D38001CB758F6002F669B /* NSNumber+MagicalDataImport.m in Sources */,
 				8C0D37A71CB7562A002F669B /* AppDelegate.swift in Sources */,

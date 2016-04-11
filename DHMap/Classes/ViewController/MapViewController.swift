@@ -1,15 +1,15 @@
 //
-//  ViewController.swift
+//  MapViewController.swift
 //  DHMap
 //
 //  Created by Dareen Hsu on 4/8/16.
 //  Copyright © 2016 D.H. All rights reserved.
 //
 
-import UIKit
 import GoogleMaps
+import UIKit
 
-class ViewController : UIViewController,CLLocationManagerDelegate {
+class MapViewController : BaseViewController,CLLocationManagerDelegate {
 
     @IBOutlet weak var baseView : UIView?
 
