@@ -49,6 +49,8 @@
 		8C707E5A1CB7A8A400721BC7 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C707E591CB7A8A400721BC7 /* MenuViewController.swift */; };
 		8C707E5C1CB7A8B000721BC7 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C707E5B1CB7A8B000721BC7 /* MapViewController.swift */; };
 		8C707E5E1CB7AABA00721BC7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C707E5D1CB7AABA00721BC7 /* BaseViewController.swift */; };
+		8C79B3271CBCD05A004FA2B2 /* StoryEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C79B3251CBCD05A004FA2B2 /* StoryEntity+CoreDataProperties.swift */; };
+		8C79B3281CBCD05A004FA2B2 /* StoryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C79B3261CBCD05A004FA2B2 /* StoryEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -137,6 +139,8 @@
 		8C707E591CB7A8A400721BC7 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		8C707E5B1CB7A8B000721BC7 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		8C707E5D1CB7AABA00721BC7 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		8C79B3251CBCD05A004FA2B2 /* StoryEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StoryEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8C79B3261CBCD05A004FA2B2 /* StoryEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +200,7 @@
 		8C0D37BB1CB758CA002F669B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8C79B31B1CBCCE5E004FA2B2 /* Model */,
 				8C707E581CB7A87F00721BC7 /* ViewController */,
 				8C0D381B1CB75A6F002F669B /* DHMap-Bridging-Header.h */,
 			);
@@ -354,6 +359,15 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		8C79B31B1CBCCE5E004FA2B2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8C79B3251CBCD05A004FA2B2 /* StoryEntity+CoreDataProperties.swift */,
+				8C79B3261CBCD05A004FA2B2 /* StoryEntity.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		908DFAD7A87C0EAE2C85D9B6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -510,6 +524,7 @@
 				8C707E5E1CB7AABA00721BC7 /* BaseViewController.swift in Sources */,
 				8C0D380C1CB758F6002F669B /* NSManagedObjectContext+MagicalSaves.m in Sources */,
 				8C0D38041CB758F6002F669B /* NSManagedObject+MagicalAggregation.m in Sources */,
+				8C79B3271CBCD05A004FA2B2 /* StoryEntity+CoreDataProperties.swift in Sources */,
 				8C0D38141CB758F6002F669B /* MagicalRecord+Options.m in Sources */,
 				8C707E5A1CB7A8A400721BC7 /* MenuViewController.swift in Sources */,
 				8C707E541CB7A78B00721BC7 /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */,
@@ -517,6 +532,7 @@
 				8C0D38151CB758F6002F669B /* MagicalRecord+Setup.m in Sources */,
 				8C0D38121CB758F6002F669B /* MagicalRecord+ErrorHandling.m in Sources */,
 				8C0D38111CB758F6002F669B /* MagicalRecord+Actions.m in Sources */,
+				8C79B3281CBCD05A004FA2B2 /* StoryEntity.swift in Sources */,
 				8C0D38051CB758F6002F669B /* NSManagedObject+MagicalDataImport.m in Sources */,
 				8C707E551CB7A78B00721BC7 /* SlideNavigationContorllerAnimatorSlide.m in Sources */,
 				8C0D380B1CB758F6002F669B /* NSManagedObjectContext+MagicalRecord.m in Sources */,
@@ -584,7 +600,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -624,7 +640,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -639,6 +655,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Darren Hsu (VKSYBVAFT7)";
 				INFOPLIST_FILE = DHMap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tw.com.dh.map.DHMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -654,6 +671,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Darren Hsu (VKSYBVAFT7)";
 				INFOPLIST_FILE = DHMap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tw.com.dh.map.DHMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
