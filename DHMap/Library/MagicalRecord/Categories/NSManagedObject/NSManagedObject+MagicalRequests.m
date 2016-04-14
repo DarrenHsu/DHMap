@@ -156,6 +156,107 @@
 	return request;
 }
 
++ (NSFetchRequest *) MR_requestAllGroupBy:(NSString *)groupTerm {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+    return [self MR_requestAllGroupBy:groupTerm
+                            inContext:[NSManagedObjectContext MR_contextForCurrentThread]];
+#pragma clang diagnostic pop
+}
+
++ (NSFetchRequest *) MR_requestAllGroupBy:(NSString *)groupTerm inContext:(NSManagedObjectContext *)context {
+    return [self MR_requestAllGroupBy:groupTerm
+                             sortedBy:nil
+                            ascending:NO
+                        withPredicate:nil
+                            inContext:context];
+}
+
++ (NSFetchRequest *) MR_requestAllGroupBy:(NSString *)groupTerm sortedBy:(NSString *)sortTerm ascending:(BOOL)ascending {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+    return [self MR_requestAllGroupBy:groupTerm
+                             sortedBy:sortTerm
+                            ascending:ascending
+                            inContext:[NSManagedObjectContext MR_contextForCurrentThread]];
+#pragma clang diagnostic pop
+}
+
++ (NSFetchRequest *) MR_requestAllGroupBy:(NSString *)groupTerm sortedBy:(NSString *)sortTerm ascending:(BOOL)ascending inContext:(NSManagedObjectContext *)context {
+    return [self MR_requestAllGroupBy:groupTerm
+                             sortedBy:sortTerm
+                            ascending:ascending
+                        withPredicate:nil
+                            inContext:context];
+}
+
++ (NSFetchRequest *) MR_requestAllGroupBy:(NSString *)groupTerm sortedBy:(NSString *)sortTerm ascending:(BOOL)ascending withPredicate:(NSPredicate *)searchTerm {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+    return [self MR_requestAllGroupBy:groupTerm
+                             sortedBy:sortTerm
+                            ascending:ascending
+                        withPredicate:searchTerm
+                            inContext:[NSManagedObjectContext MR_contextForCurrentThread]];
+#pragma clang diagnostic pop
+}
+
+
++ (NSFetchRequest *) MR_requestAllGroupBy:(NSString *)groupTerm sortedBy:(NSString *)sortTerm ascending:(BOOL)ascending withPredicate:(NSPredicate *)searchTerm inContext:(NSManagedObjectContext *)context {
+    NSFetchRequest *request = [self MR_requestAllInContext:context];
+    if (searchTerm)
+    {
+        [request setPredicate:searchTerm];
+    }
+    [request setFetchBatchSize:[self MR_defaultBatchSize]];
+
+    NSMutableArray* sortDescriptors = [[NSMutableArray alloc] init];
+    NSArray* sortKeys = [sortTerm componentsSeparatedByString:@","];
+    for (__strong NSString* sortKey in sortKeys)
+    {
+        NSArray * sortComponents = [sortKey componentsSeparatedByString:@":"];
+        if (sortComponents.count > 1)
+        {
+            NSNumber * customAscending = sortComponents.lastObject;
+            ascending = customAscending.boolValue;
+            sortKey = sortComponents[0];
+        }
+
+        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:sortKey ascending:ascending];
+        [sortDescriptors addObject:sortDescriptor];
+    }
+
+    [request setSortDescriptors:sortDescriptors];
+    if (!groupTerm) return request;
+
+    NSEntityDescription* entity = [NSEntityDescription entityForName:NSStringFromClass([self class]) inManagedObjectContext:context];
+
+    NSMutableArray *groupExceptions = [NSMutableArray new];
+    NSMutableArray *groupName = [NSMutableArray new];
+
+    NSArray* groupKeys = [groupTerm componentsSeparatedByString:@","];
+    NSMutableArray *fetch = [NSMutableArray new];
+    for (__strong NSString* groupKey in groupKeys) {
+        [groupName addObject:[entity.attributesByName objectForKey:groupKey]];
+        [groupExceptions addObject:[NSExpression expressionForKeyPath:groupKey]];
+
+        [fetch addObject:[entity.attributesByName objectForKey:groupKey]];
+    }
+
+    NSExpression *countExpression = [NSExpression expressionForFunction:@"count:" arguments:@[groupExceptions[0]]];
+    NSExpressionDescription *expressionDescription = [[NSExpressionDescription alloc] init];
+    [expressionDescription setName: @"count"];
+    [expressionDescription setExpression:countExpression];
+    [expressionDescription setExpressionResultType:NSInteger32AttributeType];
+    [fetch addObject:expressionDescription];
+
+    [request setPropertiesToFetch:fetch];
+    [request setPropertiesToGroupBy:groupName];
+    [request setResultType:NSDictionaryResultType];
+
+    return request;
+}
+
 + (NSFetchRequest *) MR_requestAllSortedBy:(NSString *)sortTerm ascending:(BOOL)ascending withPredicate:(NSPredicate *)searchTerm;
 {
 #pragma clang diagnostic push

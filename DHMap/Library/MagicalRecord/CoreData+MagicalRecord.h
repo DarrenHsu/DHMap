@@ -7,12 +7,6 @@
 
 #import <Foundation/Foundation.h>
 
-#ifdef DEBUG
-#define DBLog(fmt, ...) NSLog((@"" fmt),##__VA_ARGS__);
-#else
-#define DBLog(fmt, ...)
-#endif
-
 //! Project version number for MagicalRecord.
 FOUNDATION_EXPORT double MagicalRecordVersionNumber;
 

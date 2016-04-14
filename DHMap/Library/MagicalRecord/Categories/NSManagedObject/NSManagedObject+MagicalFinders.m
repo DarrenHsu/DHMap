@@ -21,11 +21,23 @@
 	return [self MR_executeFetchRequest:[self MR_requestAllInContext:context] inContext:context];
 }
 
++ (NSArray *) MR_findAllGroupBy:(NSString *) groupTerm inContext:(NSManagedObjectContext *)context {
+
+    return [self MR_executeFetchRequest:[self MR_requestAllGroupBy:groupTerm inContext:context] inContext:context];
+}
+
 + (NSArray *) MR_findAll
 {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 	return [self MR_findAllInContext:[NSManagedObjectContext MR_contextForCurrentThread]];
+#pragma clang diagnostic pop
+}
+
++ (NSArray *) MR_findAllGroupBy:(NSString *) groupTerm {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+    return [self MR_findAllGroupBy:groupTerm inContext:[NSManagedObjectContext MR_contextForCurrentThread]];
 #pragma clang diagnostic pop
 }
 
@@ -36,12 +48,28 @@
 	return [self MR_executeFetchRequest:request inContext:context];
 }
 
++ (NSArray *) MR_findAllGroupBy:(NSString *) groupTerm sortedBy:(NSString *)sortTerm ascending:(BOOL)ascending inContext:(NSManagedObjectContext *)context {
+    NSFetchRequest *request = [self MR_requestAllGroupBy:groupTerm sortedBy:sortTerm ascending:ascending inContext:context];
+
+    return [self MR_executeFetchRequest:request inContext:context];
+}
+
 + (NSArray *) MR_findAllSortedBy:(NSString *)sortTerm ascending:(BOOL)ascending
 {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 	return [self MR_findAllSortedBy:sortTerm
                           ascending:ascending 
+                          inContext:[NSManagedObjectContext MR_contextForCurrentThread]];
+#pragma clang diagnostic pop
+}
+
++ (NSArray *) MR_findAllGroupBy:(NSString *) groupTerm sortedBy:(NSString *)sortTerm ascending:(BOOL)ascending {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+    return [self MR_findAllGroupBy:groupTerm
+                        sortedBy:sortTerm
+                          ascending:ascending
                           inContext:[NSManagedObjectContext MR_contextForCurrentThread]];
 #pragma clang diagnostic pop
 }
@@ -56,6 +84,16 @@
 	return [self MR_executeFetchRequest:request inContext:context];
 }
 
++ (NSArray *) MR_findAllGroupBy:(NSString *) groupTerm sortedBy:(NSString *)sortTerm ascending:(BOOL)ascending withPredicate:(NSPredicate *)searchTerm inContext:(NSManagedObjectContext *)context {
+    NSFetchRequest *request = [self MR_requestAllGroupBy:groupTerm
+                                                sortedBy:sortTerm
+                                                ascending:ascending
+                                            withPredicate:searchTerm
+                                                inContext:context];
+
+    return [self MR_executeFetchRequest:request inContext:context];
+}
+
 + (NSArray *) MR_findAllSortedBy:(NSString *)sortTerm ascending:(BOOL)ascending withPredicate:(NSPredicate *)searchTerm
 {
 #pragma clang diagnostic push
@@ -63,6 +101,17 @@
 	return [self MR_findAllSortedBy:sortTerm
                           ascending:ascending
                       withPredicate:searchTerm 
+                          inContext:[NSManagedObjectContext MR_contextForCurrentThread]];
+#pragma clang diagnostic pop
+}
+
++ (NSArray *) MR_findAllGroupBy:(NSString *) groupTerm sortedBy:(NSString *)sortTerm ascending:(BOOL)ascending withPredicate:(NSPredicate *)searchTerm {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+    return [self MR_findAllGroupBy:groupTerm
+                        sortedBy:sortTerm
+                          ascending:ascending
+                      withPredicate:searchTerm
                           inContext:[NSManagedObjectContext MR_contextForCurrentThread]];
 #pragma clang diagnostic pop
 }

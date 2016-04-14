@@ -14,8 +14,8 @@ class StoryEntity: NSManagedObject {
 
     //MARK: - Test Methods
     static func createTestData() {
-        for index in 1...10 {
-            StoryEntity.addStory("我的商店\(index)", address: "台北市光復北路一段\(index)號", type: 1, telephone: "02-23895858#16\(index)", country: "台灣", city: "台北市")
+        for index in 21...30 {
+            StoryEntity.addStory("我的台北商店\(index)", address: "台北市松山區南京東路四段\(index)號", type: 1, telephone: "02-23895858#16\(index)", country: "台灣", city: "台北市")
         }
     }
 
@@ -23,6 +23,19 @@ class StoryEntity: NSManagedObject {
     static func appendPredicate(pre : NSPredicate?, address : String?) -> NSPredicate? {
         if (address != nil) {
             let p : NSPredicate = NSPredicate.init(format: "address == %@", address!)
+            if (pre != nil) {
+                return NSCompoundPredicate.init(andPredicateWithSubpredicates: [p, pre!])
+            }else {
+                return p
+            }
+        }else {
+            return (pre != nil) ? pre : NSPredicate.init(value: true)
+        }
+    }
+
+    static func appendPredicate(pre : NSPredicate?, city : String?) -> NSPredicate? {
+        if (city != nil) {
+            let p : NSPredicate = NSPredicate.init(format: "city == %@", city!)
             if (pre != nil) {
                 return NSCompoundPredicate.init(andPredicateWithSubpredicates: [p, pre!])
             }else {
@@ -64,10 +77,75 @@ class StoryEntity: NSManagedObject {
         print("<DB> \(NSStringFromSelector(#function)) start")
 
         let context : NSManagedObjectContext! = NSManagedObjectContext.MR_defaultContext()
+
         let entities : [StoryEntity]! = StoryEntity.MR_findAllSortedBy("address", ascending: true, inContext: context!) as! [StoryEntity]!
 
         print("<DB> \(NSStringFromSelector(#function)) end")
 
         return entities
+    }
+
+    static func findAllStory(city : String?) -> [StoryEntity] {
+        print("<DB> \(NSStringFromSelector(#function)) start")
+
+        let context : NSManagedObjectContext! = NSManagedObjectContext.MR_defaultContext()
+
+        let pre : NSPredicate = appendPredicate(nil, city: city)!
+
+        let entities : [StoryEntity]! = StoryEntity.MR_findAllSortedBy("address", ascending: true, withPredicate: pre, inContext: context) as! [StoryEntity]
+
+        print("<DB> \(NSStringFromSelector(#function)) end")
+
+        return entities
+    }
+
+    static func findAllGroupByCity() -> [NSDictionary]  {
+        print("<DB> \(NSStringFromSelector(#function)) start")
+
+        let context : NSManagedObjectContext! = NSManagedObjectContext.MR_defaultContext()
+        let result : [NSDictionary]! = StoryEntity.MR_findAllGroupBy("city" , inContext: context) as! [NSDictionary]
+
+        print("<DB> \(NSStringFromSelector(#function)) end")
+        
+        return result
+    }
+
+    static func searchMatchAddress(city : String!, address : String!) -> NSMutableArray {
+        print("<DB> \(NSStringFromSelector(#function)) start")
+
+        let result : NSMutableArray = NSMutableArray()
+        let source : [StoryEntity]! = StoryEntity.findAllStory(city)
+
+        for i in 0 ... address.characters.count - 1 {
+            let str = (address! as NSString).substringToIndex(address.characters.count - i)
+            for story in source {
+                if story.address == address {
+                    continue
+                }
+
+                do {
+                    let regex = try NSRegularExpression(pattern: str, options: NSRegularExpressionOptions.CaseInsensitive)
+                    let matches = regex.matchesInString(story.address!, options: [], range: NSMakeRange(0, (story.address! as NSString).length))
+
+                    if matches.count > 0 {
+                        let fullLength : CGFloat = CGFloat((story.address! as NSString).length)
+                        let strLength : CGFloat = CGFloat(str.characters.count)
+                        let p = strLength / fullLength * 100
+
+                        if  p > 50 {
+                            if !result.containsObject(story) {
+                                result.addObject(story)
+                            }
+                        }else {
+                            break
+                        }
+                    }
+                } catch {}
+            }
+        }
+
+        print("<DB> \(NSStringFromSelector(#function)) end")
+        
+        return result
     }
 }

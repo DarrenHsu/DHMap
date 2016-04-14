@@ -50,6 +50,38 @@ class MapViewController : BaseViewController,CLLocationManagerDelegate {
             mapView!.myLocationEnabled = true
 
             baseView!.addSubview(mapView!)
+
+            let geocoder : CLGeocoder! = CLGeocoder()
+            geocoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) in
+                if error != nil {
+
+                }else {
+                    let pm : [CLPlacemark]! = placemarks! as [CLPlacemark]
+                    if pm != nil && pm!.count > 0 {
+                        let placemark : CLPlacemark! = placemarks![0] as CLPlacemark
+
+                        var address : String = ""
+                        var city : String = ""
+
+                        if placemark.subAdministrativeArea != nil {
+                            address += placemark.subAdministrativeArea!
+                            city = placemark.subAdministrativeArea!
+                        }
+                        if placemark.locality != nil {
+                            address += placemark.locality!
+                        }
+
+                        address += placemark.addressDictionary!["Street"] as! String
+
+                        print("address \(address)")
+
+                        let stories : NSMutableArray = StoryEntity.searchMatchAddress(city, address: address)
+                        for (index, story) in stories.enumerate() {
+                            print("index \(index) address \((story as! StoryEntity).address!)")
+                        }
+                    }
+                }
+            })
         }
     }
 

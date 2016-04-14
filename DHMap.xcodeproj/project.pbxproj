@@ -51,6 +51,7 @@
 		8C707E5E1CB7AABA00721BC7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C707E5D1CB7AABA00721BC7 /* BaseViewController.swift */; };
 		8C79B3271CBCD05A004FA2B2 /* StoryEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C79B3251CBCD05A004FA2B2 /* StoryEntity+CoreDataProperties.swift */; };
 		8C79B3281CBCD05A004FA2B2 /* StoryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C79B3261CBCD05A004FA2B2 /* StoryEntity.swift */; };
+		8C89D4931CBF629F006D5B2A /* DHMapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C89D4921CBF629F006D5B2A /* DHMapManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -141,6 +142,7 @@
 		8C707E5D1CB7AABA00721BC7 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		8C79B3251CBCD05A004FA2B2 /* StoryEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StoryEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8C79B3261CBCD05A004FA2B2 /* StoryEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryEntity.swift; sourceTree = "<group>"; };
+		8C89D4921CBF629F006D5B2A /* DHMapManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHMapManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 		8C0D37BB1CB758CA002F669B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8C89D4911CBF6284006D5B2A /* Manager */,
 				8C79B31B1CBCCE5E004FA2B2 /* Model */,
 				8C707E581CB7A87F00721BC7 /* ViewController */,
 				8C0D381B1CB75A6F002F669B /* DHMap-Bridging-Header.h */,
@@ -368,6 +371,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		8C89D4911CBF6284006D5B2A /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				8C89D4921CBF629F006D5B2A /* DHMapManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		908DFAD7A87C0EAE2C85D9B6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -519,6 +530,7 @@
 				8C0D38161CB758F6002F669B /* MagicalRecord+ShorthandSupport.m in Sources */,
 				8C0D38031CB758F6002F669B /* NSString+MagicalDataImport.m in Sources */,
 				8C0D38091CB758F6002F669B /* NSManagedObjectContext+MagicalChainSave.m in Sources */,
+				8C89D4931CBF629F006D5B2A /* DHMapManager.swift in Sources */,
 				8C0D38011CB758F6002F669B /* NSObject+MagicalDataImport.m in Sources */,
 				8C0D38021CB758F6002F669B /* NSRelationshipDescription+MagicalDataImport.m in Sources */,
 				8C707E5E1CB7AABA00721BC7 /* BaseViewController.swift in Sources */,

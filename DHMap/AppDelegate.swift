@@ -23,6 +23,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         StoryEntity.createTestData()
 
+        for object : NSDictionary in StoryEntity.findAllGroupByCity() {
+            print("city \(object)")
+//            print("city \(object.objectForKey("city")!) count \(object.objectForKey("count")!)")
+        }
+
         return true
     }
 
