@@ -112,24 +112,28 @@ class MapViewController : BaseViewController,CLLocationManagerDelegate {
 
         let geocoder : CLGeocoder! = CLGeocoder()
         geocoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) in
-            if error == nil {
-                let pm : [CLPlacemark]! = placemarks! as [CLPlacemark]
-                if pm != nil && pm!.count > 0 {
-                    let placemark : CLPlacemark! = placemarks![0] as CLPlacemark
-
-                    if placemark.subAdministrativeArea != nil {
-                        self.currentAddress = self.currentAddress + placemark.subAdministrativeArea!
-                        self.currentCity = placemark.subAdministrativeArea!
-                    }
-
-                    if placemark.locality != nil {
-                        self.currentAddress = self.currentAddress + placemark.locality!
-                    }
-
-                    self.currentAddress = self.currentAddress + (placemark.addressDictionary!["Street"] as! String)
-                    self.presentMatchStory()
-                }
+            if error != nil {
+                return;
             }
+
+            let pm : [CLPlacemark]! = placemarks! as [CLPlacemark]
+            if pm == nil && pm!.count <= 0 {
+                return
+            }
+
+            let placemark : CLPlacemark! = placemarks![0] as CLPlacemark
+
+            if placemark.subAdministrativeArea != nil {
+                self.currentAddress = self.currentAddress + placemark.subAdministrativeArea!
+                self.currentCity = placemark.subAdministrativeArea!
+            }
+
+            if placemark.locality != nil {
+                self.currentAddress = self.currentAddress + placemark.locality!
+            }
+
+            self.currentAddress = self.currentAddress + (placemark.addressDictionary!["Street"] as! String)
+            self.presentMatchStory()
         })
     }
 
