@@ -82,6 +82,7 @@ class MapViewController : BaseViewController,CLLocationManagerDelegate {
                     let  position = CLLocationCoordinate2DMake((placemark?.location?.coordinate.latitude)!, (placemark?.location?.coordinate.longitude)!)
                     marker = GMSMarker(position: position)
                     marker!.title = (story as! StoryEntity).name
+                    marker!.snippet = (story as! StoryEntity).address
                     marker!.map = self.mapView
 
                     markDict.setObject(marker!, forKey: address)
