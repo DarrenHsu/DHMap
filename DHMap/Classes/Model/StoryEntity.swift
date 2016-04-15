@@ -14,8 +14,8 @@ class StoryEntity: NSManagedObject {
 
     //MARK: - Test Methods
     static func createTestData() {
-        for index in 21...30 {
-            StoryEntity.addStory("我的台北商店\(index)", address: "台北市松山區南京東路四段\(index)號", type: 1, telephone: "02-23895858#16\(index)", country: "台灣", city: "台北市")
+        for index in 31...40 {
+            StoryEntity.addStory("我的台北商店\(index)", address: "台北市松山區光復北路11巷\(index)號", type: 1, telephone: "02-23895858#16\(index)", country: "台灣", city: "台北市")
         }
     }
 
