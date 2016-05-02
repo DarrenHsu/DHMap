@@ -17,6 +17,7 @@ class MapViewController : BaseViewController,CLLocationManagerDelegate {
     var mapView : GMSMapView?
     var currentAddress : String! = ""
     var currentCity : String! = ""
+    var isLoadCurrentLocation : Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,7 +101,7 @@ class MapViewController : BaseViewController,CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location : CLLocation! = locations[0]
 
-        if mapView != nil && location == nil {
+        if (mapView != nil && location == nil) || isLoadCurrentLocation {
             return;
         }
 
@@ -136,6 +137,8 @@ class MapViewController : BaseViewController,CLLocationManagerDelegate {
             self.currentAddress = self.currentAddress + (placemark.addressDictionary!["Street"] as! String)
             self.presentMatchStory()
         })
+
+        isLoadCurrentLocation = true
     }
 
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
